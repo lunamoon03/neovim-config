@@ -16,12 +16,21 @@ return {
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = "make" } 
 		}
 	},
+	{ 
+		'NeogitOrg/neogit',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'sindrets/diffview.nvim',
+			'nvim-telescope/telescope.nvim'
+		},
+		config = true
+	},
 	{ "navarasu/onedark.nvim" },
 	{ "mfussenegger/nvim-jdtls" },
 	{ 
 		"myusuf3/numbers.vim",
 		config = function()
-			vim.g.numbers_exclude = {"neo-tree","lazy"}
+			vim.g.numbers_exclude = {"neo-tree","lazy","neogit","NeogitStatus","NeogitCommitPopup"}
 		end,
 	},
 	{ "farmergreg/vim-lastplace" },
