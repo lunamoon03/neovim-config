@@ -96,12 +96,6 @@ return {
 		end,
 	},
 	{ "famiu/bufdelete.nvim" },
-	{ 
-		"myusuf3/numbers.vim",
-		config = function()
-			vim.g.numbers_exclude = {"neo-tree","lazy", "oil"}
-		end,
-	},
 	-- QoL
 	{
 		"folke/which-key.nvim",

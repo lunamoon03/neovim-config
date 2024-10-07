@@ -11,4 +11,27 @@ autocmd({ "TermOpen" }, {
 		vim.cmd('startinsert')
 	end,
 })
+-- }}
+
+
+--- {{{ Toggle relative numbers
+-- Toggle relative numbers, on for insert, off by default.
+augroup("ToggleRNu", { clear = true })
+autocmd({ "InsertEnter" }, {
+  -- command = "setlocal norelativenumber",
+  callback = function()
+    if vim.o.number then
+      vim.o.relativenumber = false
+    end
+  end,
+  group = "ToggleRNu",
+})
+autocmd({ "InsertLeave" }, {
+  callback = function()
+    if vim.o.number then
+      vim.o.relativenumber = true
+    end
+  end,
+  group = "ToggleRNu",
+})
 -- }}}
