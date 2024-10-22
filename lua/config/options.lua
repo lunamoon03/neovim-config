@@ -5,7 +5,7 @@ vim.o.softtabstop = 4
 -- Leader
 vim.g.mapleader = " ";
 -- TODO: Code actions
-
+vim.keymap.set('n', "<leader>ca", '<cmd>lua require("fastaction").code_action()<CR>', { noremap = true, silent = true})
 -- File system keybinds
 vim.keymap.set({"n","i"}, "<C-o>", "<esc>:Telescope fd<CR>", { noremap = true, silent = true})
 vim.keymap.set({"n","i"}, "<C-f>", "<esc>:Telescope current_buffer_fuzzy_find<CR>", { noremap = true, silent = true})

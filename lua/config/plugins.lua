@@ -18,6 +18,18 @@ return {
 		end,
 	},
 	{
+		"Chaitanyabsprip/fastaction.nvim",
+		opts = {
+			dismiss_keys = { '<esc>', 'q' },
+			keys = "wertyuiopasdfghjklzxcvbnm",
+			popup = {
+				highlight = {
+					key = "Comment",
+				},
+			},
+		},
+	},
+	{
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		lazy = true,
 		config = function()
