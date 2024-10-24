@@ -77,7 +77,7 @@ return {
 		config = function()
 			require('onedark').setup {
 				style = 'darker',
-				term_colors = false,
+				term_colors = true,
 			}
 			require('onedark').load()
 		end,
