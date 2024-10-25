@@ -1,4 +1,17 @@
 return {
+	-- theme	
+	{
+		"navarasu/onedark.nvim",
+		lazy = true,
+		priority = 1000,
+		config = function()
+			require('onedark').setup {
+				style = 'darker',
+				term_colors = true,
+			}
+			require('onedark').load()
+		end,
+	},
 	-- programming stuff
 	-- TODO
 	{
@@ -67,9 +80,11 @@ return {
 		end,
 	},
 	-- Elixir
-	{ "elixir-editors/vim-elixir", event = "VeryLazy" },
-	-- }}}
-	-- theme	
+	{
+		"elixir-editors/vim-elixir",
+		lazy = true,
+		ft = { "elixir" }
+	},
 	{
 		"navarasu/onedark.nvim",
 		lazy = false,
@@ -86,11 +101,17 @@ return {
 			require('onedark').load()
 		end,
 	},
+	-- }}}
 	-- file system stuff
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		lazy = true,
 		cmd = "Neotree",
+		keys = {
+			{ "<leader>nt", "<cmd>Neotree toggle focus<CR>", mode = "n", noremap = true, silent = true, desc = "Toggle Neotree" },
+			{ "<leader>gt", "<cmd>Neotree float git_status<CR>", mode = "n", noremap = true, silent = true, desc = "Neotree git view" },
+			{ "<leader>bt", "<cmd>Neotree toggle buffers focus right<CR>", mode = "n", noremap = true, silent = true, desc = "Toggle Neotree buffer view" },
+		},
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -111,6 +132,11 @@ return {
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
 		cmd = "Telescope",
+		keys = {
+			{ "<C-o>", "<esc>:Telescope fd<CR>", mode = {"n","i"}, noremap = true, silent = true, desc = "Fzf files" },
+			{ "<C-f>", "<esc>:Telescope current_buffer_fuzzy_find<CR>", mode = {"n","i"}, noremap = true, silent = true, desc = "Buffer fzf" },
+			{ "<leader>ff", "<cmd>Telescope live_grep<CR>", mode = "n", noremap = true, silent = true },
+		},
 		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -186,6 +212,15 @@ return {
 	},
 	-- Visual
 	{
+		'MeanderingProgrammer/render-markdown.nvim',
+		lazy = true,
+		ft = { "markdown", "quarto", "org" },
+		dependencies = {
+			'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons'
+		},
+		opts = {},
+	},
+	{
 		"HiPhish/rainbow-delimiters.nvim",
 		lazy = true,
 		event = "VeryLazy"
@@ -201,7 +236,14 @@ return {
 		opts = require "config.settings.lualine", -- TODO: customise lualine
 		lazy = false,
 	},
-	{ "famiu/bufdelete.nvim" },
+	{
+		"famiu/bufdelete.nvim",
+		lazy = true,
+		cmd = { "Bdelete", "Bwipeout" },
+		keys = {
+			{ "<leader>q", "<cmd>Bdelete<CR>", mode = "n", noremap = true, silent = true, desc = "Clear buffer" },
+		},
+	},
 	{
 		"akho/numbers.vim",
 		config = function()
