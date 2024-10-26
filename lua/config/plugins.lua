@@ -8,9 +8,30 @@ return {
 			require('onedark').setup {
 				style = 'darker',
 				term_colors = true,
+				colors = {
+
+				},
+				highlights = {
+					["@lsp.type.modifier.java"] = { fg = "$purple" },
+					["@type.builtin.java"] = { fg = "$purple" },
+					["@lsp.type.parameter.java"] = { fg = "$orange" },
+					["@variable.member.java"] = { fg = "$red" },
+					["@lsp.typemod.property.private.java"] = { fg = "$red" },
+
+
+					["@lsp.type.variable.java"] = { fg = "$none" },
+					["@lsp.type.property.java"] = { fg = "$none" },
+					["@lsp.mod.declaration.java"] = { fg = "$none" },
+				},
 			}
 			require('onedark').load()
 		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 	-- programming stuff
 	-- TODO
@@ -84,22 +105,6 @@ return {
 		"elixir-editors/vim-elixir",
 		lazy = true,
 		ft = { "elixir" }
-	},
-	{
-		"navarasu/onedark.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require('onedark').setup {
-				style = 'darker',
-				term_colors = false,
-				highlights = {
-					["@variable.member"] = {fg = "$red" },
-					["@variable.parameter"] = { fg = "$cyan" },
-				},
-			}
-			require('onedark').load()
-		end,
 	},
 	-- }}}
 	-- file system stuff
