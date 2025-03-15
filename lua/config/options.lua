@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 -- Indentation settings
 -- The amount of "spaces" indented automatically
 vim.o.shiftwidth = 2

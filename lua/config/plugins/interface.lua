@@ -84,7 +84,16 @@ return {
     },
     opts = {},
   },
-  -- file system stuff
+  -- filesystem stuff
+  {
+    "nvim-tree/nvim-tree.lua",
+    lazy = true,
+    keys = { "<leader>n" },
+    config = function()
+      require("config.plugins.settings.nvim-tree")
+    end,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
   {
     "stevearc/oil.nvim",
     dependencies = {
