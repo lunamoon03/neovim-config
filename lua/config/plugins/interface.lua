@@ -26,7 +26,6 @@ return {
         "gundo",
         "vimshell",
         "w3m",
-        "neo-tree",
         "lazy",
         "oil",
       }
@@ -86,45 +85,6 @@ return {
     opts = {},
   },
   -- file system stuff
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    lazy = true,
-    cmd = "Neotree",
-    keys = {
-      {
-        "<leader>nt",
-        "<cmd>Neotree toggle focus<CR>",
-        mode = "n",
-        noremap = true,
-        silent = true,
-        desc = "Toggle Neotree",
-      },
-      {
-        "<leader>gt",
-        "<cmd>Neotree float git_status<CR>",
-        mode = "n",
-        noremap = true,
-        silent = true,
-        desc = "Neotree git view",
-      },
-      {
-        "<leader>bt",
-        "<cmd>Neotree toggle buffers focus right<CR>",
-        mode = "n",
-        noremap = true,
-        silent = true,
-        desc = "Toggle Neotree buffer view",
-      },
-    },
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim",
-    },
-    opts = require("config.plugins.settings.neotree"),
-  },
   {
     "stevearc/oil.nvim",
     dependencies = {
@@ -204,7 +164,7 @@ return {
       disabled_filetypes = {
         "qf",
         "netrw",
-        "neo-tree",
+        "nvim-tree",
         "lazy",
         "oil",
         "mason",

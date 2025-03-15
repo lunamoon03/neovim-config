@@ -2,7 +2,7 @@ local M = {}
 
 -- stolen from https://codeberg.org/babalark/nvim-config/src/branch/main/lua/myconfig/util.lua
 -- ty sofa :)
----@param maps { name: string?, [string]: [string|function, string, vim.keymap.set.Opts?]}
+---@param maps { [string]: [string|function, string, vim.keymap.set.Opts?] }
 ---@param opts { prefix: string?, group_name: string?, mode: string|string[]|nil, hidden: boolean?, buffer: integer?}|nil
 function M.set_keymaps(maps, opts)
   local opts = opts or {}

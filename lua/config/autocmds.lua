@@ -23,17 +23,6 @@ autocmd("TermOpen", {
   end,
 })
 -- }}}
--- {{{ Neotree with nvim .
-autocmd("User", {
-  pattern = "LazyDone",
-  callback = function()
-    local arg = vim.fn.argv(0)
-    if arg == "." then
-      vim.cmd("Neotree")
-    end
-  end,
-})
--- }}}
 -- {{{ Format on save
 autocmd("BufWritePre", {
   pattern = "*",
