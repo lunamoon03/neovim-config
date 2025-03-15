@@ -13,11 +13,12 @@ end
 
 return {
   extensions = {
-    "neo-tree",
+    "nvim-tree",
     "fugitive",
     "lazy",
     "oil",
-    "trouble",
+    "quickfix",
+    "overseer",
   },
   -- Statusline
   sections = {
