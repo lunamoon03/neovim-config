@@ -7,7 +7,7 @@ return {
   {
     "ggandor/leap.nvim",
     lazy = true,
-    event = "BufRead",
+    keys = { "f", "F", "gf" },
     dependencies = { "tpope/vim-repeat" },
     config = function()
       vim.keymap.set({ "n", "x", "o" }, "f", "<Plug>(leap-forward)")
