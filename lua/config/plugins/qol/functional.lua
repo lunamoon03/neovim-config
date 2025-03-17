@@ -1,4 +1,5 @@
 return {
+  { "tjdevries/lazy-require.nvim" },
   {
     "folke/which-key.nvim",
     opts = {},
